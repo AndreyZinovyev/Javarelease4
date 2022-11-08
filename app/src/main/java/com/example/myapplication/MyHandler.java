@@ -88,8 +88,8 @@ public class MyHandler {
     }
 
 
-
-    public ArrayList<Cars>  onClickRecycle(){
+    public String  onClickRecycle(){
+    //public ArrayList<Cars>  onClickRecycle(){
         if (mConnect == null) {
             Log.d(LOG_TAG, "Соединение не установлено");
         }  else {
@@ -122,14 +122,14 @@ public class MyHandler {
 
         }
         String s = st;
-        String[] dd = s.split(":");
+        /*  String[] dd = s.split(":");
         ArrayList<Cars> d = new ArrayList<Cars>();
         for(int ii = 0; ii < dd.length-1;ii++)
         {
             String[] q = dd[ii].split(";");
             d.add(new Cars(Integer.parseInt(q[0]),q[1],"123"));
-        }
+        } */
 
-        return d;
+        return s;
     }
 }

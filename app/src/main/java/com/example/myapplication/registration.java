@@ -7,8 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.myapplication.databinding.FragmentAddBinding;
 import com.example.myapplication.databinding.FragmentRegistrationBinding;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,7 +21,10 @@ import com.example.myapplication.databinding.FragmentRegistrationBinding;
  * create an instance of this fragment.
  */
 public class registration extends Fragment {
+
 FragmentRegistrationBinding __reg_binding;
+ //   RecyclerView recyclerView = null;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -60,7 +68,32 @@ FragmentRegistrationBinding __reg_binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //recyclerView = recyclerView.findViewById(R.id.Resours);
+        __reg_binding= FragmentRegistrationBinding.inflate(inflater,container,false);
+        __reg_binding.insert.setOnClickListener(view -> {
+
+
+MyHandler reghand=new MyHandler();
+String reg;
+//ArrayList<Cars>Car=reghand.onClickRecycle();
+            String g = reghand.onClickRecycle();
+           /* for(int ii = 0; ii < Car.size()-1;ii++)
+            {
+                g+= Car.get(ii).Number + ";  ";
+            }*/
+//DannyeAdapter adapter=new DannyeAdapter(this,Car);
+
+//recyclerView.setAdapter(adapter);
+
+
+            // тестовое
+           Toast toast = Toast.makeText(view.getContext(),
+                     g, Toast.LENGTH_SHORT);
+            toast.show();
+
+
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_registration, container, false);
+        return __reg_binding.getRoot();
     }
 }
