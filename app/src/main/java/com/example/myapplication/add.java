@@ -65,6 +65,8 @@ __binding_add=FragmentAddBinding.inflate(inflater,container,false);
 __binding_add.goRegistration.setOnClickListener(view -> {
     Navigation.findNavController(view).navigate(R.id.action_add2_to_registration2);});
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add, container, false);
+        return __binding_add.getRoot();
+
+
     }
 }
