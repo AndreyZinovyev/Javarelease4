@@ -66,8 +66,16 @@ __binding_add=FragmentAddBinding.inflate(inflater,container,false);
 __binding_add.goRegistration.setOnClickListener(view -> {
     Navigation.findNavController(view).navigate(R.id.action_add2_to_registration2);});
         __binding_add.add.setOnClickListener(view -> {
+            MyHandler hand=new MyHandler();
+            String y;
+            y=hand.onClick(__binding_add.timestart.getText().toString());
             __binding_add.timestart.getText();//хотел кинуть что-то тестовое н не получилось
+            __binding_add.timestart.getText().toString();
 
+            // тестовое
+            Toast toast = Toast.makeText(view.getContext(),
+                    y, Toast.LENGTH_SHORT);
+            toast.show();
 
 
         });
