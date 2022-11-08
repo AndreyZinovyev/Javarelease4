@@ -8,6 +8,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.myapplication.databinding.FragmentAddBinding;
 
@@ -64,8 +65,15 @@ FragmentAddBinding __binding_add;
 __binding_add=FragmentAddBinding.inflate(inflater,container,false);
 __binding_add.goRegistration.setOnClickListener(view -> {
     Navigation.findNavController(view).navigate(R.id.action_add2_to_registration2);});
+        __binding_add.add.setOnClickListener(view -> {
+            __binding_add.timestart.getText();//хотел кинуть что-то тестовое н не получилось
+
+
+
+        });
         // Inflate the layout for this fragment
         return __binding_add.getRoot();
+
 
 
     }
