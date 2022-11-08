@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/add2">
+
+    <fragment
+        android:id="@+id/add2"
+        android:name="com.example.myapplication.add"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_add2_to_registration2"
+            app:destination="@id/registration2" />
+        <action
+            android:id="@+id/action_add2_to_viewing"
+            app:destination="@id/viewing" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration2"
+        android:name="com.example.myapplication.registration"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" />
+    <fragment
+        android:id="@+id/viewing"
+        android:name="com.example.myapplication.Viewing"
+        android:label="fragment_viewing"
+        tools:layout="@layout/fragment_viewing" />
+
+</navigation>
