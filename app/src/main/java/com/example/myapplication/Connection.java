@@ -72,19 +72,29 @@ public class Connection {
         catch (IOException e){return "Catch";}
     }
     public void sendData(byte[] data) throws Exception {
-        // Проверка открытия сокета
-        if (mSocket == null || mSocket.isClosed()) {
-            throw new Exception("Ошибка отправки данных. " +
-                    "Сокет не создан или закрыт");
-        }
-        // Отправка данных
-        try {
-            mSocket.getOutputStream().write(data);
-            mSocket.getOutputStream().flush();
-        } catch (IOException e) {
-            throw new Exception("Ошибка отправки данных : "
-                    + e.getMessage());
-        }
+
+        new Thread(() -> {
+            if (mSocket == null || mSocket.isClosed()) {
+                try {
+                    throw new Exception("Ошибка отправки данных. " +
+                            "Сокет не создан или закрыт");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            // Отправка данных
+            try {
+                mSocket.getOutputStream().write(data);
+                mSocket.getOutputStream().flush();
+            } catch (IOException e) {
+                try {
+                    throw new Exception("Ошибка отправки данных : "
+                            + e.getMessage());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }).start();
     }
     @Override
     protected void finalize() throws Throwable

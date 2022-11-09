@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/registration2"
-        android:name="com.example.myapplication.registration"
+        android:name="com.example.myapplication.FragmentRegistration"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" />
     <fragment
