@@ -47,10 +47,22 @@ FragmentRegistrationBinding __binding;
 
     private List<Car> initCars(){
         List<Car> result = new ArrayList<>();
-
-        for (int i = 0; i < 20; i++) {
-            result.add(new Car(i, "number" + i, "time" + i));
+        String getbase;
+        String [] mass ;
+        MyHandler hand=new MyHandler();
+        getbase=hand.onClickRecycle();
+        mass=getbase.split(":");
+        for (String testar:mass) {
+          String [] a;
+            a=testar.split(";");
+            result.add(new Car(Integer.parseInt (a[0]), "number" + a[1], "time" + a[2]));
         }
+
+
+
+        /*for (int i = 0; i < 20; i++) {
+            result.add(new Car(i, "number" + i, "time" + i));
+        }*/
 
         return result;
 
