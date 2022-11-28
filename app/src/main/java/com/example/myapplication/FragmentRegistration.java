@@ -51,7 +51,7 @@ FragmentRegistrationBinding __binding;
         String [] mass ;
         MyHandler hand=new MyHandler();
         getbase=hand.onClickRecycle();
-        mass=getbase.split(":");
+        mass=getbase.split("==");
         for (String testar:mass) {
           String [] a;
             a=testar.split(";");
